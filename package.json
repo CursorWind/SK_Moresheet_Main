@@ -1,5 +1,5 @@
 {
-  "name": "mysk",
+  "name": "sk-nextjs-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@suankularb-components/css": "^2.3.1",
-    "@suankularb-components/react": "^2.3.2",
+    "@fontsource/inter": "^4.5.11",
+    "@fontsource/noto-sans-thai": "^4.5.9",
+    "@fontsource/sarabun": "^4.5.8",
+    "@fontsource/sora": "^4.5.8",
+    "@suankularb-components/css": "^2.7.4",
+    "@suankularb-components/react": "^2.8.0",
     "date-fns": "^2.28.0",
     "framer-motion": "^6.2.8",
     "next": "^12.1.0",
