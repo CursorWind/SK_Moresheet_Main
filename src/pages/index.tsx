@@ -34,13 +34,13 @@ const Index: NextPage = () => {
         }
       >
         <Section>
-          <div className="relative aspect-[4/1] w-full overflow-hidden rounded-3xl">
-            <Image
-              src="/images/home/banner.webp"
-              layout="fill"
-              alt={t("welcome.banner")}
-            />
-          </div>
+          <Image
+            src="/images/home/banner.webp"
+            width={1676}
+            height={420}
+            alt={t("welcome.banner")}
+            className="w-fit rounded-3xl"
+          />
         </Section>
         <Section labelledBy="welcome">
           <Header
