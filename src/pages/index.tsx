@@ -15,6 +15,9 @@ import {
   Title,
 } from "@suankularb-components/react";
 
+// Types
+import { LangCode } from "@utils/types/common";
+
 // Page
 const Index: NextPage = () => {
   const { t } = useTranslation(["home", "common"]);
@@ -54,7 +57,7 @@ const Index: NextPage = () => {
   );
 };
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: LangCode }) => ({
   props: {
     ...(await serverSideTranslations(locale, ["common", "home"])),
   },
