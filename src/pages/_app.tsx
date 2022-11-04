@@ -78,7 +78,11 @@ const App = ({ Component, pageProps }: AppProps) => {
                 url: "/about",
               },
             ]}
-            LinkElement={Link}
+            LinkElement={({ children, href }) => (
+              <Link href={href} legacyBehavior>
+                {children}
+              </Link>
+            )}
           >
             <motion.div
               key={router.route}
