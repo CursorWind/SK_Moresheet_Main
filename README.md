@@ -4,9 +4,7 @@ This repository is a template for all Suankularb websites using the Next.js fram
 
 If you know Next.js, you already know enough to get started. We look forward to see what you’re going to create!
 
-**Note:** If you are making a Suankularb website, don’t clone this repository directly. Use the “Use this template“ button.
-
----
+**Note:** If you are making a Suankularb website, don’t clone this repository directly. Use the “[Use this template](https://github.com/suankularb-wittayalai-school/sk-nextjs-template/generate)“ button.
 
 ## Setup
 
@@ -19,8 +17,6 @@ npm i
 ### Prettier
 
 This template uses Prettier to format files. Install Prettier on your code editor and ensure it is the default formatter. Prettier should detect the configuration file `.prettierrc.json`.
-
----
 
 ## Development
 
@@ -52,8 +48,6 @@ This template uses Tailwind CSS. To add styles, add utility classes directly to 
 ### Internationalization
 
 This template, by default, supports American English (`en-US`) and Thai (`th`). To add a language, update `./next-i18next.config.js`, update `LangCode` in `./src/utils/types/common.ts`, and add a folder in `./public/static/locales` for your translation files.
-
----
 
 ## Production
 
