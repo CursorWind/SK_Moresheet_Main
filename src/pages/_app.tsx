@@ -4,7 +4,7 @@ import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 import { appWithTranslation, useTranslation } from "next-i18next";
 
@@ -36,7 +36,7 @@ import "@styles/global.css";
 import { animationEase } from "@utils/animations/config";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter();
+  const pathname = usePathname()!;
   const { t } = useTranslation();
 
   return (
@@ -51,7 +51,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           onExitComplete={() => window.scrollTo(0, 0)}
         >
           <PageLayout
-            currentPath={router.asPath}
+            currentPath={pathname}
             navItems={[
               {
                 name: t("navigation.home"),
@@ -85,7 +85,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             )}
           >
             <motion.div
-              key={router.route}
+              key={pathname}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

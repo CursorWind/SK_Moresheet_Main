@@ -41,6 +41,7 @@ const Index: NextPage = () => {
             src="/images/home/banner.webp"
             width={1676}
             height={420}
+            priority
             alt={t("welcome.banner")}
             className="w-fit rounded-3xl"
           />
