@@ -1,4 +1,4 @@
-// Modules
+// External libraries
 import { NextPage } from "next";
 import Image from "next/image";
 import Head from "next/head";
@@ -14,6 +14,9 @@ import {
   Section,
   Title,
 } from "@suankularb-components/react";
+
+// Types
+import { LangCode } from "@utils/types/common";
 
 // Page
 const Index: NextPage = () => {
@@ -34,13 +37,14 @@ const Index: NextPage = () => {
         }
       >
         <Section>
-          <div className="relative aspect-[4/1] w-full overflow-hidden rounded-3xl">
-            <Image
-              src="/images/home/banner.webp"
-              layout="fill"
-              alt={t("welcome.banner")}
-            />
-          </div>
+          <Image
+            src="/images/home/banner.webp"
+            width={1676}
+            height={420}
+            priority
+            alt={t("welcome.banner")}
+            className="w-fit rounded-3xl"
+          />
         </Section>
         <Section labelledBy="welcome">
           <Header
@@ -54,7 +58,7 @@ const Index: NextPage = () => {
   );
 };
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: LangCode }) => ({
   props: {
     ...(await serverSideTranslations(locale, ["common", "home"])),
   },
