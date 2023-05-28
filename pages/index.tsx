@@ -27,11 +27,11 @@ const IndexPage: CustomPage = () => {
       </Head>
       <ContentLayout>
         <Image
-          src="/images/home/banner.webp"
-          width={1676}
-          height={420}
+          src="/images/home/banner.png"
+          width={1141}
+          height={285}
           priority
-          alt={t("welcome.banner")}
+          alt=""
           className="w-full sm:rounded-lg"
         />
         <Section>

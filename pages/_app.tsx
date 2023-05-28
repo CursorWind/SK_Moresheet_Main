@@ -1,13 +1,18 @@
 // External libraries
 import { MotionConfig } from "framer-motion";
+
 import {
-  Inter,
-  Space_Grotesk,
-  Sarabun,
+  Fira_Code,
   IBM_Plex_Sans_Thai,
+  Inter,
+  Sarabun,
+  Space_Grotesk,
 } from "next/font/google";
+import localFont from "next/font/local";
+
 import { appWithTranslation } from "next-i18next";
-import { useState } from "react";
+
+import { FC, ReactNode, useState } from "react";
 
 // SK Components
 import { ThemeProvider } from "@suankularb-components/react";
@@ -16,7 +21,6 @@ import { ThemeProvider } from "@suankularb-components/react";
 import Layout from "@/components/Layout";
 
 // Contexts
-import PreviousRouteContext from "@/contexts/PreviousRouteContext";
 import SnackbarContext from "@/contexts/SnackbarContext";
 
 // Styles
@@ -24,7 +28,6 @@ import "@/styles/globals.css";
 
 // Utilities
 import { CustomAppProps } from "@/utils/types";
-import { usePreviousPath } from "@/utils/routing";
 
 // English fonts
 const bodyFontEN = Inter({ subsets: ["latin"] });
@@ -40,10 +43,37 @@ const displayFontTH = IBM_Plex_Sans_Thai({
   subsets: ["thai"],
 });
 
+// Mono font
+const monoFont = Fira_Code({ subsets: ["latin"] });
+
+// Icon font
+const iconFont = localFont({
+  src: "../public/fonts/material-symbols.woff2",
+  weight: "100 700",
+  style: "normal",
+});
+
+/**
+ * To prevent the App component from being more of a triangle than it already
+ * is, all the context providers are extracted into this component.
+ *
+ * @param children The app that uses contexts.
+ *
+ * @returns The app wrapped with context providers.
+ */
+const Contexts: FC<{ children: ReactNode }> = ({ children }) => {
+  const [snackbar, setSnackbar] = useState<JSX.Element | null>(null);
+
+  return (
+    <SnackbarContext.Provider value={{ snackbar, setSnackbar }}>
+      {/* Add more contexts here */}
+      {children}
+    </SnackbarContext.Provider>
+  );
+};
+
 function App({ Component, pageProps }: CustomAppProps) {
   const { fab, pageHeader, childURLs } = Component;
-  const { previousPath } = usePreviousPath();
-  const [snackbar, setSnackbar] = useState<JSX.Element | null>(null);
 
   return (
     <>
@@ -53,20 +83,21 @@ function App({ Component, pageProps }: CustomAppProps) {
             ${bodyFontEN.style.fontFamily}, ${bodyFontTH.style.fontFamily};
           --font-display: ${displayFontEN.style.fontFamily},
             ${displayFontTH.style.fontFamily};
+          --font-mono: ui-monospace, SFMono-Regular, SF Mono,
+            ${monoFont.style.fontFamily}, ${bodyFontTH.style.fontFamily};
+          --font-icon: ${iconFont.style.fontFamily};
         }
       `}</style>
 
-      <PreviousRouteContext.Provider value={previousPath}>
-        <SnackbarContext.Provider value={{ snackbar, setSnackbar }}>
-          <MotionConfig reducedMotion="user">
-            <ThemeProvider>
-              <Layout {...{ fab, pageHeader, childURLs }}>
-                <Component {...pageProps} />
-              </Layout>
-            </ThemeProvider>
-          </MotionConfig>
-        </SnackbarContext.Provider>
-      </PreviousRouteContext.Provider>
+      <Contexts>
+        <MotionConfig reducedMotion="user">
+          <ThemeProvider>
+            <Layout {...{ fab, pageHeader, childURLs }}>
+              <Component {...pageProps} />
+            </Layout>
+          </ThemeProvider>
+        </MotionConfig>
+      </Contexts>
     </>
   );
 }
