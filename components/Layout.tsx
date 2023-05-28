@@ -138,7 +138,7 @@ const Layout: FC<
         <PageHeader
           brand={<Favicon />}
           homeURL="/"
-          element={Link}
+          buttonElement={Link}
           onNavToggle={() => setNavOpen(true)}
           {...pageHeader}
           title={
