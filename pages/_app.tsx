@@ -12,7 +12,7 @@ import localFont from "next/font/local";
 
 import { appWithTranslation } from "next-i18next";
 
-import { useState } from "react";
+import { FC, ReactNode, useState } from "react";
 
 // SK Components
 import { ThemeProvider } from "@suankularb-components/react";
@@ -53,9 +53,27 @@ const iconFont = localFont({
   style: "normal",
 });
 
+/**
+ * To prevent the App component from being more of a triangle than it already
+ * is, all the context providers are extracted into this component.
+ *
+ * @param children The app that uses contexts.
+ *
+ * @returns The app wrapped with context providers.
+ */
+const Contexts: FC<{ children: ReactNode }> = ({ children }) => {
+  const [snackbar, setSnackbar] = useState<JSX.Element | null>(null);
+
+  return (
+    <SnackbarContext.Provider value={{ snackbar, setSnackbar }}>
+      {/* Add more contexts here */}
+      {children}
+    </SnackbarContext.Provider>
+  );
+};
+
 function App({ Component, pageProps }: CustomAppProps) {
   const { fab, pageHeader, childURLs } = Component;
-  const [snackbar, setSnackbar] = useState<JSX.Element | null>(null);
 
   return (
     <>
@@ -71,7 +89,7 @@ function App({ Component, pageProps }: CustomAppProps) {
         }
       `}</style>
 
-      <SnackbarContext.Provider value={{ snackbar, setSnackbar }}>
+      <Contexts>
         <MotionConfig reducedMotion="user">
           <ThemeProvider>
             <Layout {...{ fab, pageHeader, childURLs }}>
@@ -79,7 +97,7 @@ function App({ Component, pageProps }: CustomAppProps) {
             </Layout>
           </ThemeProvider>
         </MotionConfig>
-      </SnackbarContext.Provider>
+      </Contexts>
     </>
   );
 }
