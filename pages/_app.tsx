@@ -16,7 +16,6 @@ import { ThemeProvider } from "@suankularb-components/react";
 import Layout from "@/components/Layout";
 
 // Contexts
-import PreviousRouteContext from "@/contexts/PreviousRouteContext";
 import SnackbarContext from "@/contexts/SnackbarContext";
 
 // Styles
@@ -24,7 +23,6 @@ import "@/styles/globals.css";
 
 // Utilities
 import { CustomAppProps } from "@/utils/types";
-import { usePreviousPath } from "@/utils/routing";
 
 // English fonts
 const bodyFontEN = Inter({ subsets: ["latin"] });
@@ -42,7 +40,6 @@ const displayFontTH = IBM_Plex_Sans_Thai({
 
 function App({ Component, pageProps }: CustomAppProps) {
   const { fab, pageHeader, childURLs } = Component;
-  const { previousPath } = usePreviousPath();
   const [snackbar, setSnackbar] = useState<JSX.Element | null>(null);
 
   return (
@@ -56,17 +53,15 @@ function App({ Component, pageProps }: CustomAppProps) {
         }
       `}</style>
 
-      <PreviousRouteContext.Provider value={previousPath}>
-        <SnackbarContext.Provider value={{ snackbar, setSnackbar }}>
-          <MotionConfig reducedMotion="user">
-            <ThemeProvider>
-              <Layout {...{ fab, pageHeader, childURLs }}>
-                <Component {...pageProps} />
-              </Layout>
-            </ThemeProvider>
-          </MotionConfig>
-        </SnackbarContext.Provider>
-      </PreviousRouteContext.Provider>
+      <SnackbarContext.Provider value={{ snackbar, setSnackbar }}>
+        <MotionConfig reducedMotion="user">
+          <ThemeProvider>
+            <Layout {...{ fab, pageHeader, childURLs }}>
+              <Component {...pageProps} />
+            </Layout>
+          </ThemeProvider>
+        </MotionConfig>
+      </SnackbarContext.Provider>
     </>
   );
 }
