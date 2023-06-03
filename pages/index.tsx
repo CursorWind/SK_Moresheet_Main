@@ -30,8 +30,8 @@ const IndexPage: CustomPage = () => {
       <ContentLayout>
         
         <Section>
-    <b><h1 className="skc-display-large">{t("indexPage.title")} <TDtext>{t("indexPage.gradiented")}</TDtext></h1></b>
-    <p className="skc-display-small">{t("indexPage.desc")}</p> <p className="skc-display-small">{t("indexPage.desc2")}</p>
+    <b><h1 className="skc-display-large display-large">{t("indexPage.title")} <TDtext>{t("indexPage.gradiented")}</TDtext></h1></b>
+    <p className="skc-display-medium">{t("indexPage.desc")}<br/> {t("indexPage.desc2")}</p>
   </Section>
   <Image
           src="/images/home/Frame 8.png"
@@ -40,7 +40,7 @@ const IndexPage: CustomPage = () => {
           priority
           alt=""
           className="w-full sm:rounded-lg"
-          style={{ zIndex: 3 }}
+          style={{ zIndex: 3}}
         />
 
 <div className="background-container">
@@ -48,14 +48,23 @@ const IndexPage: CustomPage = () => {
       </ContentLayout>
 
       <style jsx>{`
+      .display-large{
+        font-size: 160px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+      }
   .background-container {
     width: 100vw;
-    height: 100vh;
+    height: 75vw;
     position: absolute;
-    left: 0px; top: 0px;
-    background-image: url("/images/Futuristic Backdrop.svg");
+    left: 0px; top: -20px;
+    background-image: url("/images/Futuristic Backdrop.png");
     background-repeat: no-repeat;
+    opacity: 0.6;
     background-size: cover;
+  }
+  body{
+    overflow:hidden;
   }
 `}</style>
 

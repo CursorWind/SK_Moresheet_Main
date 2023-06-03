@@ -75,7 +75,23 @@ const IndexPage: CustomPage = () => {
             <p>{t("unfinished.ctx")}</p>
             </div>
           )}
+
           
+          
+        </div>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {isMobile ? (<center>
+            <div style={{ flex: '0 0 90vw' }}>
+              <p className='skc-display-small'>Meet the Committee</p> 
+            <p>{t("unfinished.ctx")}</p>
+</div> </center>
+          ) : (
+            <div style={{ flex: '0 0 32vw' }}>
+              <p className='skc-display-small'>Meet the Committee</p> 
+            <p>{t("unfinished.shortCtx")}</p>
+            </div>
+          )}
         </div>
       </ContentLayout>
     </>
