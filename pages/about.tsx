@@ -8,12 +8,12 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 // SK Components
 import {
   ContentLayout,
+  Header,
   Section,
 } from "@suankularb-components/react";
 
-import TDtext from '../components/TDtitle';
-
-
+import React from 'react';
+import Tdline from '../components/tdline';
 
 // Types
 import { CustomPage, LangCode } from "@/utils/types";
@@ -29,19 +29,12 @@ const IndexPage: CustomPage = () => {
       </Head>
       <ContentLayout>
         
+        
+
         <Section>
-    <b><h1 className="skc-display-large">{t("indexPage.title")} <TDtext>{t("indexPage.gradiented")}</TDtext></h1></b>
-    <p className="skc-display-small">{t("indexPage.desc")}</p>
-  </Section>
-  <Image
-          src="/images/home/Frame 8.png"
-          width={1000}
-          height={230}
-          priority
-          alt=""
-          className="w-full sm:rounded-lg"
-          style={{ zIndex: 3 }}
-        />
+          <Header>{t("aboutPage.title")}</Header><Tdline/>
+          <p className="skc-body-medium">{t("unfinished.ctx")}</p>
+        </Section>
       </ContentLayout>
     </>
   );
@@ -52,5 +45,6 @@ export const getStaticProps = async ({ locale }: { locale: LangCode }) => ({
     ...(await serverSideTranslations(locale, ["common", "home"])),
   },
 });
+
 
 export default IndexPage;
