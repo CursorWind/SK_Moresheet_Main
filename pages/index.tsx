@@ -31,7 +31,7 @@ const IndexPage: CustomPage = () => {
         
         <Section>
     <b><h1 className="skc-display-large">{t("indexPage.title")} <TDtext>{t("indexPage.gradiented")}</TDtext></h1></b>
-    <p className="skc-display-small">{t("indexPage.desc")}</p>
+    <p className="skc-display-small">{t("indexPage.desc")}</p> <p className="skc-display-small">{t("indexPage.desc2")}</p>
   </Section>
   <Image
           src="/images/home/Frame 8.png"
@@ -42,7 +42,23 @@ const IndexPage: CustomPage = () => {
           className="w-full sm:rounded-lg"
           style={{ zIndex: 3 }}
         />
+
+<div className="background-container">
+    </div>
       </ContentLayout>
+
+      <style jsx>{`
+  .background-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0px; top: 0px;
+    background-image: url("/images/Futuristic Backdrop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+`}</style>
+
     </>
   );
 };

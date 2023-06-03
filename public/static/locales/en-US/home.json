@@ -3,7 +3,8 @@
   "indexPage": {
     "title": "SK",
     "gradiented": "TechDev",
-    "desc": "Technology <br> meets entertainment."
+    "desc": "Technology",
+    "desc2": "meets entertainment."
   },
   "aboutPage": {
     "title": "About",
