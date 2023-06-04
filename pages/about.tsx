@@ -105,3 +105,4 @@ export const getStaticProps = async ({ locale }: { locale: LangCode }) => ({
 });
 
 export default IndexPage;
+
