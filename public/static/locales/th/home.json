@@ -1,0 +1,18 @@
+{
+  "title": "SKTD",
+  "indexPage": {
+    "title": "SK",
+    "gradiented": "TechDev",
+    "desc": "Technology",
+    "desc2": "meets entertainment."
+  },
+  "aboutPage": {
+    "title": "About",
+    "ctx1": "Technology meets entertainment."
+  },
+  "unfinished":{
+    "ctx":"This semi-paragraph is designated to represent the key components and signifying aspects of the techdev club, it will most likely be written within 12/6/2023 or before the first video is completed. The text you see right now is part of an incomplete webpage content, and will be fixed as soon as the data is present or the display is complete. We appreciate your patience and are sorry for the inconvenience.",
+    "shortCtx":"This short note is present because the data is incomplete, it will most likely be written within 12/6/2023 or before the first video is completed."
+  
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "brand": {
+    "name": "SKTD landing page",
+    "logoText": "SKTD landing page",
+    "school": "Suankularb Wittayalai School"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "project": "Projects",
+    "contact": "Contact",
+    "Gallery": "Gallery",
+    "Merchandise": "Merch"
+  }
+}
