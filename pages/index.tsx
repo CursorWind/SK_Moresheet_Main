@@ -12,6 +12,7 @@ import {
   Button,
   MaterialIcon,
   
+  
 } from "@suankularb-components/react";
 
 import TDtext from '../components/TDtitle';
@@ -41,6 +42,7 @@ const IndexPage: CustomPage = () => {
   appearance="filled"
   icon={<MaterialIcon icon="login" />}
   tooltip="Join us or else"
+  href="/en-US/account/login"
 >
   Join us
 </Button>

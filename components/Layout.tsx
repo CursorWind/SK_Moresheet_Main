@@ -72,21 +72,21 @@ const Layout: FC<
         >
           <NavDrawerItem
             icon={<MaterialIcon icon="home" />}
-            label={t("navigation.home")}
+            label='home'
             selected={router.pathname === "/"}
             href="/"
             element={Link}
           />
           <NavDrawerItem
             icon={<MaterialIcon icon="login" />}
-            label={t("navigation.login")}
+            label='login'
             selected={router.pathname === "/account/login"}
             href="/account/login"
             element={Link}
           />
           <NavDrawerItem
             icon={<MaterialIcon icon="info" />}
-            label={t("navigation.about")}
+            label='about'
             selected={router.pathname === "/about"}
             href="/about"
             element={Link}
@@ -113,21 +113,21 @@ const Layout: FC<
       >
         <NavBarItem
           icon={<MaterialIcon icon="home" />}
-          label={t("navigation.home")}
+          label='home'
           selected={getIsSelected(/^\/$/)}
           href="/"
           element={Link}
         />
         <NavBarItem
           icon={<MaterialIcon icon="login" />}
-          label={t("navigation.login")}
+          label='login'
           selected={getIsSelected(/^\/account\/login/)}
           href="/account/login"
           element={Link}
         />
         <NavBarItem
           icon={<MaterialIcon icon="info" />}
-          label={t("navigation.about")}
+          label='about'
           selected={getIsSelected(/^\/about/)}
           href="/about"
           element={Link}

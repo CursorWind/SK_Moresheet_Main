@@ -1,6 +1,8 @@
 import { google } from "googleapis";
 import keys from "../../credentials.json";
 
+
+
 export default function handler(req, res) {
     try {
         const client = new google.auth.JWT(
@@ -21,6 +23,9 @@ export default function handler(req, res) {
             };
 
             let data = await gsapi.spreadsheets.values.get(opt);
+            
+              
+              
             return res.status(400).send(JSON.stringify({error: false, data: data.data.values}));
         });
     } catch (e) {

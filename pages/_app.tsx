@@ -206,7 +206,7 @@ function App({ Component, pageProps }: CustomAppProps) {
   const { fab, pageHeader, childURLs } = Component;
 
   useEffect(() => {
-    if (router.pathname === '/welcome') {
+    if (router.pathname === '/account/login') {
       initCanvas();
     }
 
