@@ -9,6 +9,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import {
   ContentLayout,
   Section,
+  Button,
+  MaterialIcon
 } from "@suankularb-components/react";
 
 import TDtext from '../components/TDtitle';
@@ -32,7 +34,28 @@ const IndexPage: CustomPage = () => {
         <Section>
     <b><h1 className="skc-display-large display-large">{t("indexPage.title")} <TDtext>{t("indexPage.gradiented")}</TDtext></h1></b>
     <p className="skc-display-medium">{t("indexPage.desc")}<br/> {t("indexPage.desc2")}</p>
+    
+    <div style={{ display: 'flex'}}>
+    <Button className="w-5/12"
+  appearance="filled"
+  icon={<MaterialIcon icon="login" />}
+  tooltip="Join us or else"
+>
+  Join us
+</Button>
+<span className="w-3">
+
+</span>
+<Button className="w-5/12"
+  appearance="outlined"
+  icon={<MaterialIcon icon="info" />}
+  tooltip="Just join us already"
+  href="/en-US/about"
+>
+  Learn more
+</Button> </div>
   </Section>
+  
   <Image
           src="/images/home/Frame 8.png"
           width={1000}
@@ -40,11 +63,13 @@ const IndexPage: CustomPage = () => {
           priority
           alt=""
           className="w-full sm:rounded-lg"
-          style={{ zIndex: 3}}
         />
 
 <div className="background-container">
     </div>
+
+ 
+
       </ContentLayout>
 
       <style jsx>{`
@@ -54,10 +79,11 @@ const IndexPage: CustomPage = () => {
         margin-bottom: 30px;
       }
   .background-container {
+    z-index: -23;
     width: 100vw;
     height: 75vw;
     position: absolute;
-    left: 0px; top: -20px;
+    left: 0px; top: -90px;
     background-image: url("/images/Futuristic Backdrop.png");
     background-repeat: no-repeat;
     opacity: 0.6;
