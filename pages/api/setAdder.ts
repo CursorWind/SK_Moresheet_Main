@@ -1,6 +1,5 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import { google } from "googleapis";
-import keys from "../../credentials.json";
 
 type SheetForm={
 name: string
