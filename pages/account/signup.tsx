@@ -16,7 +16,7 @@ import {
 
 import TDtext from '../../components/TDtitle';
 
-import React, { useState } from 'react';
+import React, { useState,FormEvent,ChangeEvent } from 'react';
 import Tdline from '../../components/tdline';
 
 // Types

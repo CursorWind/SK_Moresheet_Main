@@ -1,12 +1,11 @@
 import { google } from "googleapis";
-import keys from "../../credentials.json";
 
 
 
 export default function handler(req, res) {
     try {
         const client = new google.auth.JWT(
-            keys.client_email, null, keys.private_key, ['https://www.googleapis.com/auth/spreadsheets']
+            process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL, null, process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"), ['https://www.googleapis.com/auth/spreadsheets']
         );
 
         client.authorize(async function(err, tokens) {
@@ -24,7 +23,6 @@ export default function handler(req, res) {
 
             let data = await gsapi.spreadsheets.values.get(opt);
             
-               const sheets = google.sheets({ version: 'v4', auth: client });
 
 
               

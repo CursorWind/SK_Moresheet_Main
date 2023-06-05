@@ -12,7 +12,7 @@ export default async function handler(
 req: NextApiRequest,
 res: NextApiResponse
 ){
-    if (req.method !='POST') {
+    if (req.method !=='POST') {
         return res.status(405).send({message: 'Only POST requests are allowed'})
     }
 
@@ -21,7 +21,7 @@ const body = req.body as SheetForm
 
 try {
     const client = new google.auth.JWT(
-      keys.client_email, null, keys.private_key, ['https://www.googleapis.com/auth/spreadsheets']
+        process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL, '8', process.env.GOOGLE_PRIVATE_KEY, ['https://www.googleapis.com/auth/spreadsheets']
     );
 
     client.authorize(async function (err, tokens) {
@@ -56,18 +56,19 @@ const range: string = `Nextjs!A${length+3}`;
   };
 
   // Update cell A6 with a new value
-  const response = sheets.spreadsheets.values.update(request, function (err) {
+  const response = sheets.spreadsheets.values.update(request, function (err: Error | null) {
     if (err) {
       console.error('The API returned an error:', err);
       return;
     }
+  
 
     console.log(`Value added to cell ${range}.`);
   });
       return res.status(200).json({data: response});
     });
   } catch (e) {
-    return res.status(500).send(JSON.stringify({ error: true, message: e.message }));
+    return res.status(500).send(JSON.stringify({ error: true, message: (e as Error).message }));
   }
 
 }
