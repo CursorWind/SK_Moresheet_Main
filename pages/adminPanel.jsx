@@ -10,8 +10,6 @@ import {
   MaterialIcon,
 } from "@suankularb-components/react";
 
-import TDtext from '../components/TDtitle';
-
 import React from 'react';
 import Tdline from '../components/tdline';
 
