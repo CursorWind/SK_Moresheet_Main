@@ -23,6 +23,11 @@ import Tdline from '../../components/tdline';
 import { CustomPage, LangCode } from "@/utils/types";
 
 
+import fetch from 'isomorphic-fetch';
+
+// Define the argument value
+const argValue = 'Example Argument';
+
 
 
 export default function Home({sheetdata}) {

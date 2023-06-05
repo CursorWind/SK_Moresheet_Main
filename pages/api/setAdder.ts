@@ -1,5 +1,25 @@
-export default function handler(req, res) {
-  try {
+import {NextApiRequest, NextApiResponse} from "next";
+import { google } from "googleapis";
+import keys from "../../credentials.json";
+
+type SheetForm={
+name: string
+email: string
+phone: string
+message: string
+}
+export default async function handler(
+req: NextApiRequest,
+res: NextApiResponse
+){
+    if (req.method !='POST') {
+        return res.status(405).send({message: 'Only POST requests are allowed'})
+    }
+
+const body = req.body as SheetForm
+
+
+try {
     const client = new google.auth.JWT(
       keys.client_email, null, keys.private_key, ['https://www.googleapis.com/auth/spreadsheets']
     );
@@ -17,7 +37,7 @@ export default function handler(req, res) {
   console.log(range)
 
   // Define the new value to be set in cell A6
-  const new_value = 'Hello, World!';
+  const new_value = 'body.email';
 
   // Prepare the request
   const request = {
@@ -30,7 +50,7 @@ export default function handler(req, res) {
   };
 
   // Update cell A6 with a new value
-  sheets.spreadsheets.values.update(request, function (err, response) {
+  const response = sheets.spreadsheets.values.update(request, function (err, response) {
     if (err) {
       console.error('The API returned an error:', err);
       return;
@@ -38,9 +58,10 @@ export default function handler(req, res) {
 
     console.log('Value added to cell A6.');
   });
-      return res.status(400).send(JSON.stringify({ error: false, data: data.data.values }));
+      return res.status(200).json({data: response.data });
     });
   } catch (e) {
-    return res.status(400).send(JSON.stringify({ error: true, message: e.message }));
+    return res.status(500).send(JSON.stringify({ error: true, message: e.message }));
   }
+
 }
