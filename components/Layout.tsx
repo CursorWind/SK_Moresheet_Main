@@ -109,7 +109,6 @@ const Layout: FC<
         }
         fab={fab}
         onNavToggle={() => setNavOpen(true)}
-        label={t("navigation.label")}
       >
         <NavBarItem
           icon={<MaterialIcon icon="home" />}
