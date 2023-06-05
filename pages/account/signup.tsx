@@ -50,20 +50,19 @@ const IndexPage: NextPage = () => {
             <Header>Register</Header>
             <Tdline />
             <div className='left-3'>
-            Individuals Have signed up
+            [number] Individuals Have signed up. Button will come soon (will make it techdev style)
           </div>
           </Section>
           <Section className='left-3'>
             <form onSubmit={handleSubmit}>
-          <TextField
-            className='w-96'
-            appearance='outlined'
-            label="Email"
-            leading={<MaterialIcon icon="person" />}
-            helperMsg="Please enter your school mail"
+          <input
+          type='text'
+            className='w-96 h-12 pl-4'
             style={{zIndex:20}}
             value={email}
-            onChange={setEmail}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setEmail(event.target.value as string)
+            }
             
         /> <br/> <br/>
 
