@@ -63,9 +63,9 @@ const IndexPage: NextPage = () => {
             helperMsg="Please enter your school mail"
             style={{zIndex:20}}
             value={email}
-            onChange={setEmail}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)}
             
-        /> <br/>
+        /> <br/> <br/>
 
 
         <div className="w-96 left-3" style={{zIndex:20}}>
