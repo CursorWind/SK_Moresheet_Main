@@ -15,7 +15,6 @@ import {
   
 } from "@suankularb-components/react";
 
-import TDtext from '../components/TDTitle';
 
 
 
@@ -34,7 +33,14 @@ const IndexPage: CustomPage = () => {
       <ContentLayout>
         
         <Section>
-    <b><h1 className="skc-display-large display-large">{t("indexPage.title")} <TDtext>{t("indexPage.gradiented")}</TDtext></h1></b>
+    <b><h1 className="skc-display-large display-large">{t("indexPage.title")} 
+    
+    <p className="gradient-text">
+      {t("indexPage.gradiented")}
+      
+    </p>
+
+    </h1></b>
     <p className="skc-display-medium">{t("indexPage.desc")}<br/> {t("indexPage.desc2")}</p>
   
     <div style={{ display: 'flex'}}>
@@ -73,6 +79,16 @@ const IndexPage: CustomPage = () => {
       </ContentLayout>
 
       <style jsx>{`
+
+.gradient-text {
+  display: inline;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: radial-gradient(circle, #EB695A, #E98462, #6370B9, #A16499);
+
+}
+
       .display-large{
         font-size: 160px;
         margin-top: 60px;
