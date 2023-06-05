@@ -6,5 +6,6 @@ This repository is a made as the technology and development club website of suan
 
 > **Note**: This website is made using the suankularb wittayalai nextjs template. [[this template](https://github.com/suankularb-wittayalai-school/sk-nextjs-template/generate)].
 
+> **Note2**: 1.0.0 = Layout, 1.0.1 += Database, 1.0.2 += Utils, 1.0.3 = Activity day version
 
 This readme file will be completed in a later date. For now, you can access the website by cloning this repo, then cd the directory, type npm i, and then npm run dev.

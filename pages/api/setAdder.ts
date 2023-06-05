@@ -33,11 +33,17 @@ try {
 
         // Define the spreadsheet ID and range
   const spreadsheetId = '1cq2Xy_McXji3leDCRRHy7paVyckxpiHqq4Bat_Kw1tY';
-  const range = 'Nextjs!A6'
+  
+  const responsev = await sheets.spreadsheets.values.get({
+    spreadsheetId: '1cq2Xy_McXji3leDCRRHy7paVyckxpiHqq4Bat_Kw1tY',
+    range: 'Nextjs!A3:A',
+  });
+  
+  const length = responsev.data.values?.length || 0;
+const range: string = `Nextjs!A${length+3}`;
+  
   console.log(range)
-
-  // Define the new value to be set in cell A6
-  const new_value = 'body.email';
+  const new_value = body.email;
 
   // Prepare the request
   const request = {
@@ -50,15 +56,15 @@ try {
   };
 
   // Update cell A6 with a new value
-  const response = sheets.spreadsheets.values.update(request, function (err, response) {
+  const response = sheets.spreadsheets.values.update(request, function (err) {
     if (err) {
       console.error('The API returned an error:', err);
       return;
     }
 
-    console.log('Value added to cell A6.');
+    console.log(`Value added to cell ${range}.`);
   });
-      return res.status(200).json({data: response.data });
+      return res.status(200).json({data: response});
     });
   } catch (e) {
     return res.status(500).send(JSON.stringify({ error: true, message: e.message }));
