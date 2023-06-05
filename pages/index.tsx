@@ -15,7 +15,7 @@ import {
   
 } from "@suankularb-components/react";
 
-import TDtext from '../components/TDtitle';
+import TDtext from '../components/TDTitle';
 
 
 

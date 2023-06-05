@@ -14,7 +14,6 @@ import {
   Button,
 } from "@suankularb-components/react";
 
-import TDtext from '../../components/TDtitle';
 
 import React, { useState,FormEvent,ChangeEvent } from 'react';
 import Tdline from '../../components/tdline';
