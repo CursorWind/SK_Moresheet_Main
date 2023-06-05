@@ -48,10 +48,10 @@ const IndexPage: NextPage = () => {
         
         <ContentLayout>
         <Section>
-            <Header>Log In</Header>
+            <Header>Register</Header>
             <Tdline />
             <div className='left-3'>
-            4 Individuals Have signed up
+            Individuals Have signed up
           </div>
           </Section>
           <Section className='left-3'>

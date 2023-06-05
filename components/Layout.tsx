@@ -80,8 +80,8 @@ const Layout: FC<
           <NavDrawerItem
             icon={<MaterialIcon icon="login" />}
             label='login'
-            selected={router.pathname === "/account/login"}
-            href="/account/login"
+            selected={router.pathname === "/account/signup"}
+            href="/account/signup"
             element={Link}
           />
           <NavDrawerItem
@@ -122,7 +122,7 @@ const Layout: FC<
           icon={<MaterialIcon icon="login" />}
           label='login'
           selected={getIsSelected(/^\/account\/login/)}
-          href="/account/login"
+          href="/account/signup"
           element={Link}
         />
         <NavBarItem

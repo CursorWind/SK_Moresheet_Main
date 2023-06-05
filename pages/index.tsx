@@ -42,7 +42,7 @@ const IndexPage: CustomPage = () => {
   appearance="filled"
   icon={<MaterialIcon icon="login" />}
   tooltip="Join us or else"
-  href="/en-US/account/login"
+  href="/en-US/account/signup"
 >
   Join us
 </Button>
