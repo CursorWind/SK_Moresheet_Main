@@ -63,7 +63,7 @@ const Layout: FC<
               <Trans i18nKey="brand.logoText" ns="common">
                 <span>SK </span>
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text font-bold text-transparent">
-                  แม่แบบ Next.js
+                  SKTD
                 </span>
               </Trans>
             </div>
@@ -91,7 +91,15 @@ const Layout: FC<
             href="/about"
             element={Link}
           />
+          <NavDrawerItem
+            icon={<MaterialIcon icon="contacts" />}
+            label='contact'
+            selected={router.pathname === "/contacts"}
+            href="/contacts"
+            element={Link}
+          />
         </NavDrawerSection>
+        
 
         {/* Insert more Navigation Drawer Sections as your app expand. */}
       </NavDrawer>
@@ -129,6 +137,13 @@ const Layout: FC<
           label='about'
           selected={getIsSelected(/^\/about/)}
           href="/about"
+          element={Link}
+        />
+        <NavBarItem
+          icon={<MaterialIcon icon="contacts" />}
+          label='contact'
+          selected={getIsSelected(/^\/contacts/)}
+          href="/contacts"
           element={Link}
         />
       </NavBar>
