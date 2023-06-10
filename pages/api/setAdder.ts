@@ -20,7 +20,7 @@ const body = req.body as SheetForm
 
 try {
     const client = new google.auth.JWT(
-        process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL, '8', process.env.GOOGLE_PRIVATE_KEY, ['https://www.googleapis.com/auth/spreadsheets']
+        process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL, 'blank', process.env.GOOGLE_PRIVATE_KEY, ['https://www.googleapis.com/auth/spreadsheets']
     );
 
     client.authorize(async function (err, tokens) {
@@ -31,11 +31,11 @@ try {
       const sheets = google.sheets({ version: 'v4', auth: client });
 
         // Define the spreadsheet ID and range
-  const spreadsheetId = '1cq2Xy_McXji3leDCRRHy7paVyckxpiHqq4Bat_Kw1tY';
+  const spreadsheetId = process.env.GOOGLE_SHEET_ID;
   
   const responsev = await sheets.spreadsheets.values.get({
-    spreadsheetId: '1cq2Xy_McXji3leDCRRHy7paVyckxpiHqq4Bat_Kw1tY',
-    range: 'Nextjs!A3:A',
+    spreadsheetId: process.env.GOOGLE_SHEET_ID,
+    range: 'Nextjs!A3:A', //* if you are editing this file, the range is '${sheetname}!${range}'
   });
   
   const length = responsev.data.values?.length || 0;

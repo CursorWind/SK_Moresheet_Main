@@ -1,8 +1,22 @@
-# SuankularbTechnologyDevelopment Club website
+# Suankularb Technology Development Club website
 
 This repository is a made as the technology and development club website of suankularb wittayalai school. The website as of its current state, is undergoing development and marked by the author as incomplete. If you encounter any bugs, an issue thread in github is highly appreciated. The link will be released in a later date. If it is public, the link will be below
 ```
+https://suankularb-technology-development-8adl.vercel.app/en-US
 ```
+
+## Commands
+
+Run this at project root
+```bash
+npm i
+```
+[insert your own google api client secret in the env file] and of course, run
+```bash
+npm run dev
+```
+The site should start on your localhost
+
 
 > **Note**: This website is made using the suankularb wittayalai nextjs template. [[this template](https://github.com/suankularb-wittayalai-school/sk-nextjs-template/generate)].
 
