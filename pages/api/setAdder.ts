@@ -38,46 +38,25 @@ try {
   });
   
   const length = responsev.data.values?.length || 0;
-const range: string = `Nextjs!A${length+3}`;
+const range: string = `Nextjs!A${length+3}:B${length+3}`;
   
   console.log(range)
   const new_value1 = body.email;
-
+  const new_value2 = body.fullName;
   // Prepare the request
   const request = {
     spreadsheetId: spreadsheetId,
     range: range,
     valueInputOption: 'RAW',
     resource: {
-      values: [[new_value1]],
+      values: [[new_value1,new_value2]],
     },
   };
 
-  const new_value2 = body.fullName;
 
-  // Prepare the request
-  const range2: string = `Nextjs!B${length+3}`;
-  const requesttwo = {
-    spreadsheetId: spreadsheetId,
-    range: range2,
-    valueInputOption: 'RAW',
-    resource: {
-      values: [[new_value2]],
-    },
-  };
 
   // Update cell A6 with a new value
   const response = sheets.spreadsheets.values.update(request, function (err: Error | null) {
-    if (err) {
-      console.error('The API returned an error:', err);
-      return;
-    }
-    
-
-    console.log(`Value added to cell ${range}.`);
-  });
-
-  const response2 = sheets.spreadsheets.values.update(requesttwo, function (err: Error | null) {
     if (err) {
       console.error('The API returned an error:', err);
       return;
