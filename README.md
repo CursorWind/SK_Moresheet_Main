@@ -1,3 +1,5 @@
+![alt text](https://media.discordapp.net/attachments/786920333977321502/1117011718544035860/SKTD_activity_day_release.png?width=1440&height=501)
+
 # Suankularb Technology Development Club website
 
 This repository is a made as the technology and development club website of suankularb wittayalai school. The website as of its current state, is undergoing development and marked by the author as incomplete. If you encounter any bugs, an issue thread in github is highly appreciated. The link will be released in a later date. If it is public, the link will be below
