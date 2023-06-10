@@ -38,18 +38,21 @@ try {
   });
   
   const length = responsev.data.values?.length || 0;
-const range: string = `Nextjs!A${length+3}:B${length+3}`;
+const range: string = `Nextjs!A${length+3}:E${length+3}`;
   
   console.log(range)
   const new_value1 = body.email;
   const new_value2 = body.fullName;
+  const new_value3 = body.nick;
+  const new_value4 = body.classN;
+  const currentTime = new Date().toLocaleString();
   // Prepare the request
   const request = {
     spreadsheetId: spreadsheetId,
     range: range,
     valueInputOption: 'RAW',
     resource: {
-      values: [[new_value1,new_value2]],
+      values: [[new_value1,new_value2,new_value3,new_value4,currentTime]],
     },
   };
 

@@ -36,10 +36,12 @@ const IndexPage: NextPage = () => {
 
   const [email,setEmail] = useState('')
   const [fullName,setFullName] = useState('')
+  const [nick,setnick] = useState('')
+  const [classN,setclassN] = useState('')
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const form = {email, fullName}
+        const form = {email, fullName,nick,classN}
         
         const response = fetch('/api/setAdder',{
           method: 'POST',
@@ -65,35 +67,63 @@ const IndexPage: NextPage = () => {
               <p className='skc-display-small'>{t("contactsPage.Head1")}</p> 
             <p >{t("contactsPage.ctx1")}</p>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="inline"><div className="top-0 w-96 inline-grid">
               <label className="text-gray-400">
                 Email
-              </label> <br />
+              </label>
           <input
           type='text'
-            className='w-96 h-12 pl-4'
+            className='w-80 h-12 pl-4'
             style={{zIndex:20}}
             value={email}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               setEmail(event.target.value as string)
             }
-        /> <br/> <br/><label className="text-gray-400">
+        /> 
+<br/>
+<label className="text-gray-400">
+                NickName
+              </label>
+          <input
+          type='text'
+            className='w-80 h-12 pl-4'
+            style={{zIndex:20}}
+            value={nick}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setnick(event.target.value as string)
+            }
+        />
+        </div>
+        
+        
+        <div className="w-96 inline-grid top-0"> <label className="text-gray-400">
         Name
-      </label> <br />
+      </label>
   <input
   type='text'
-    className='w-96 h-12 pl-4'
+    className='w-80 h-12 pl-4'
     style={{zIndex:20}}
     value={fullName}
     onChange={(event: ChangeEvent<HTMLInputElement>) =>
       setFullName(event.target.value as string)
     }
-/> <br/> <br/>
+/> <br/> <label className="text-gray-400">
+        Discord (optional)
+      </label>
+  <input
+  type='text'
+    className='w-80 h-12 pl-4'
+    style={{zIndex:20}}
+    value={classN}
+    onChange={(event: ChangeEvent<HTMLInputElement>) =>
+      setclassN(event.target.value as string)
+    }
+/></div><br/> <br/>
  
 
 
-        <div className="w-96 left-3" style={{zIndex:20}}>
-          <button className='w-96'
+        <div className="w-80 left-3" style={{zIndex:20}}>
+          <button className='w-80'
     type='submit'
   ><Button
     appearance="filled"
@@ -103,10 +133,22 @@ const IndexPage: NextPage = () => {
     Join us
   </Button>
   </button>
-       </div>  </form>
+       </div>  </form> <br/>
 
             <p className='skc-display-small'>{t("contactsPage.Head2")}</p> 
             <p >{t("contactsPage.ctx2")}</p>
+
+          <div className="flex w-full h-24">
+            <span className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3"> <p> @SKTechDev </p> <p className="text-gray-400 text-sm"> Instagram </p> </span>
+            <img src="/images/home/media.png" className="rounded-md h-16 border-neutral-500 relative border-2" style={{left:'-64px'}}/>
+            <span className="inline-block rounded-md w-1/12"></span>
+            <span className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3">@SKTechDev <p className="text-gray-400 text-sm"> Discord </p> </span>
+            <img src="/images/home/media3.png" className="rounded-md h-16 border-neutral-500 relative border-2" style={{left:'-64px'}}/>
+            <span className="inline-block rounded-md w-1/12"></span>
+            <span className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3">SKTechDev Club <p className="text-gray-400 text-sm"> Youtube </p> </span>
+            <img src="/images/home/media2.png" className="rounded-md h-16 border-neutral-500 relative border-2" style={{left:'-64px'}}/>
+          </div>
+
 
             <p className='skc-display-small'>{t("contactsPage.Head3")}</p> 
             <p >{t("contactsPage.ctx3")}</p>
