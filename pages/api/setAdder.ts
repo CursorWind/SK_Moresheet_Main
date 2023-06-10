@@ -17,7 +17,6 @@ res: NextApiResponse
 
 const body = req.body as SheetForm
 
-
 try {
     const client = new google.auth.JWT(
         process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL, 'blank', process.env.GOOGLE_PRIVATE_KEY, ['https://www.googleapis.com/auth/spreadsheets']
@@ -42,7 +41,7 @@ try {
 const range: string = `Nextjs!A${length+3}`;
   
   console.log(range)
-  const new_value = body.email;
+  const new_value1 = body.email;
 
   // Prepare the request
   const request = {
@@ -50,7 +49,20 @@ const range: string = `Nextjs!A${length+3}`;
     range: range,
     valueInputOption: 'RAW',
     resource: {
-      values: [[new_value]],
+      values: [[new_value1]],
+    },
+  };
+
+  const new_value2 = body.fullName;
+
+  // Prepare the request
+  const range2: string = `Nextjs!B${length+3}`;
+  const requesttwo = {
+    spreadsheetId: spreadsheetId,
+    range: range2,
+    valueInputOption: 'RAW',
+    resource: {
+      values: [[new_value2]],
     },
   };
 
@@ -60,10 +72,21 @@ const range: string = `Nextjs!A${length+3}`;
       console.error('The API returned an error:', err);
       return;
     }
-  
+    
 
     console.log(`Value added to cell ${range}.`);
   });
+
+  const response2 = sheets.spreadsheets.values.update(requesttwo, function (err: Error | null) {
+    if (err) {
+      console.error('The API returned an error:', err);
+      return;
+    }
+    
+
+    console.log(`Value added to cell ${range}.`);
+  });
+
       return res.status(200).json({data: response});
     });
   } catch (e) {

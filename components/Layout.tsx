@@ -128,7 +128,7 @@ const Layout: FC<
         <NavBarItem
           icon={<MaterialIcon icon="login" />}
           label='login'
-          selected={getIsSelected(/^\/account\/login/)}
+          selected={getIsSelected(/^\/account\/signup/)}
           href="/account/signup"
           element={Link}
         />

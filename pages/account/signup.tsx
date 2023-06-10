@@ -21,8 +21,6 @@ import Tdline from '../../components/tdline';
 // Types
 import { CustomPage, LangCode } from "@/utils/types";
 
-// Define the argument value
-const argValue = 'Example Argument';
 
 const IndexPage: NextPage = () => {
     const [email,setEmail] = useState('')
