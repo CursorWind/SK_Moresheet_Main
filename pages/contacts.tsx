@@ -41,7 +41,7 @@ const IndexPage: NextPage = () => {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const form = {email, fullName,nick,classN}
+        const form = {email,fullName,nick,classN}
         
         const response = fetch('/api/setAdder',{
           method: 'POST',
@@ -139,14 +139,15 @@ const IndexPage: NextPage = () => {
             <p >{t("contactsPage.ctx2")}</p>
 
           <div className="flex w-full h-24">
-            <span className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3"> <p> @SKTechDev </p> <p className="text-gray-400 text-sm"> Instagram </p> </span>
-            <img src="/images/home/media.png" className="rounded-md h-16 border-neutral-500 relative border-2" style={{left:'-64px'}}/>
+            <a href="https://www.instagram.com/sktechdev/" target="_blank"  className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3"> <p> @SKTechDev </p> <p className="text-gray-400 text-sm"> Instagram </p> </a>
+            <img src="/images/home/media.png" className="rounded-md h-16 border-neutral-500 relative border-2 cursor-pointer" style={{left:'-64px'}}/>
             <span className="inline-block rounded-md w-1/12"></span>
-            <span className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3">@SKTechDev <p className="text-gray-400 text-sm"> Discord </p> </span>
-            <img src="/images/home/media3.png" className="rounded-md h-16 border-neutral-500 relative border-2" style={{left:'-64px'}}/>
+            <a href="https://discord.gg/3tS5VNW" target="_blank"  className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3">@SKTechDev <p className="text-gray-400 text-sm"> Discord </p> </a>
+            <img src="/images/home/media3.png" className="rounded-md h-16 border-neutral-500 relative border-2 cursor-pointer" style={{left:'-64px'}}/>
             <span className="inline-block rounded-md w-1/12"></span>
-            <span className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3">SKTechDev Club <p className="text-gray-400 text-sm"> Youtube </p> </span>
-            <img src="/images/home/media2.png" className="rounded-md h-16 border-neutral-500 relative border-2" style={{left:'-64px'}}/>
+
+            <a href="https://www.youtube.com/@sktechdev" target="_blank" className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3">SKTechDev Club <p className="text-gray-400 text-sm"> Youtube </p> </a>
+            <img src="/images/home/media2.png" className="rounded-md h-16 border-neutral-500 relative border-2 cursor-pointer" style={{left:'-64px'}}/>
           </div>
 
 

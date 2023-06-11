@@ -2,10 +2,10 @@ import {NextApiRequest, NextApiResponse} from "next";
 import { google } from "googleapis";
 
 type SheetForm={
-name: string
+nick: string
 email: string
-phone: string
-message: string
+fullName: string
+classN: string
 }
 export default async function handler(
 req: NextApiRequest,
