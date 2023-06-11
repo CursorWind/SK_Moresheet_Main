@@ -82,14 +82,28 @@ const IndexPage: CustomPage = () => {
 
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {isMobile ? (<center>
+          
+<Image
+                src="/images/home/replacePic1.png"
+                alt=""
+                layout="responsive"
+                width={400}
+                height={500}
+                className="w-full sm:rounded-lg"
+              /><br/>
             <div style={{ flex: '0 0 90vw' }}>
               <p className='skc-display-small'>Meet the Committee</p> 
             <p>{t("unfinished.ctx")}</p>
-</div> </center>
+</div> 
+
+
+</center>
           ) : (
             <div style={{ flex: '0 0 32vw' }}>
+              
               <p className='skc-display-small'>Meet the Committee</p> 
             <p>{t("unfinished.shortCtx")}</p>
+              
             </div>
           )}
         </div>

@@ -24,14 +24,15 @@ import Tdline from '../components/tdline';
 import { CustomPage, LangCode } from "@/utils/types";
 
 // Function to check if it's a mobile device
-function isMobileDevice() {
-  return typeof window !== 'undefined' && window.innerWidth < window.innerHeight;;
-}
+
 
 // Page
 
 const IndexPage: NextPage = () => {
   const { t } = useTranslation(["home", "common"]);
+  function isMobileDevice() {
+  return typeof window !== 'undefined' && window.innerWidth < window.innerHeight;;
+}
   const isMobile = isMobileDevice();
 
   const [email,setEmail] = useState('')
@@ -92,7 +93,7 @@ const IndexPage: NextPage = () => {
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               setnick(event.target.value as string)
             }
-        />
+        /> <br/>
         </div>
         
         
@@ -138,23 +139,31 @@ const IndexPage: NextPage = () => {
             <p className='skc-display-small'>{t("contactsPage.Head2")}</p> 
             <p >{t("contactsPage.ctx2")}</p>
 
-          <div className="flex w-full h-24">
+          {isMobile ? (
+              <div className="block w-full h-24">
+              <a href="https://www.instagram.com/sktechdev/" target="_blank"  className="grid rounded-l-lg w-3/4 border-2 h-16 border-neutral-500 p-3 border-r-0"> <p> @SKTechDev </p> <p className="text-gray-400 text-sm"> Instagram </p> </a>
+              <img src="/images/home/media.png" className="rounded-r-lg h-16 border-neutral-500 relative border-2 cursor-pointer left-3/4 bottom-16"/>
+              <a href="https://discord.gg/3tS5VNW" target="_blank"  className="grid rounded-l-lg w-3/4 border-2 h-16 border-neutral-500 p-3 border-r-0">@SK TechDev <p className="text-gray-400 text-sm"> Discord </p> </a>
+              <img src="/images/home/media3.png" className="rounded-r-lg h-16 border-neutral-500 relative border-2 cursor-pointer left-3/4 bottom-16"/>
+              <a href="https://www.youtube.com/@sktechdev" target="_blank" className="grid rounded-l-lg w-3/4 border-2 h-16 border-neutral-500 p-3 border-r-0">SKTechDev Club <p className="text-gray-400 text-sm"> Youtube </p> </a>
+              <img src="/images/home/media2.png" className="rounded-r-lg h-16 border-neutral-500 relative border-2 cursor-pointer left-3/4 bottom-16" />
+
+            </div>
+            ):(
+              <div className="flex w-full h-24">
             <a href="https://www.instagram.com/sktechdev/" target="_blank"  className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3"> <p> @SKTechDev </p> <p className="text-gray-400 text-sm"> Instagram </p> </a>
             <img src="/images/home/media.png" className="rounded-md h-16 border-neutral-500 relative border-2 cursor-pointer" style={{left:'-64px'}}/>
-            <span className="inline-block rounded-md w-1/12"></span>
-            <a href="https://discord.gg/3tS5VNW" target="_blank"  className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3">@SKTechDev <p className="text-gray-400 text-sm"> Discord </p> </a>
+            <a href="https://discord.gg/3tS5VNW" target="_blank"  className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3">@SK TechDev <p className="text-gray-400 text-sm"> Discord </p> </a>
             <img src="/images/home/media3.png" className="rounded-md h-16 border-neutral-500 relative border-2 cursor-pointer" style={{left:'-64px'}}/>
-            <span className="inline-block rounded-md w-1/12"></span>
-
             <a href="https://www.youtube.com/@sktechdev" target="_blank" className="inline-block rounded-md w-2/3 border-2 h-16 border-neutral-500 p-3">SKTechDev Club <p className="text-gray-400 text-sm"> Youtube </p> </a>
             <img src="/images/home/media2.png" className="rounded-md h-16 border-neutral-500 relative border-2 cursor-pointer" style={{left:'-64px'}}/>
+            
           </div>
+            )}
 
-
-            <p className='skc-display-small'>{t("contactsPage.Head3")}</p> 
+            <p className='skc-display-small relative'>{t("contactsPage.Head3")}</p> 
             <p >{t("contactsPage.ctx3")}</p>
         </Section>
-        
 
         
       </ContentLayout>

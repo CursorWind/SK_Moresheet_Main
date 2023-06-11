@@ -24,21 +24,33 @@ import { CustomPage, LangCode } from "@/utils/types";
 // Page
 const IndexPage: CustomPage = () => {
   const { t } = useTranslation(["home", "common"]);
+  function isMobileDevice() {
+  return typeof window !== 'undefined' && window.innerWidth < window.innerHeight;
+  }
+  const isMobile = isMobileDevice();
 
   return (
     <>
       <Head>
         <title>{t("brand.name", { ns: "common" })}</title>
       </Head>
+      
       <ContentLayout>
         
         <Section>
-    <b><h1 className="skc-display-large display-large">{t("indexPage.title")} 
+    <b><h1 className="skc-display-large display-large">SK 
     
-    <p className="gradient-text">
-      {t("indexPage.gradiented")}
-      
-    </p>
+    {isMobile ? (
+      <p className="gradient-text"> <br/>  <br/> Tech <br/>  <br/> Dev <img
+      src="/images/Futuristic Backdrop Mobile.png"
+      className="w-full absolute p-0 m-0 left-0 top-0"
+      /> </p>
+    ) : (
+      <p className="gradient-text"> TechDev <img
+      src="/images/Futuristic Backdrop.png"
+      className="w-full absolute p-0 m-0 left-0 top-0"
+      /> </p>
+    )}
 
     </h1></b>
     <p className="skc-display-medium">{t("indexPage.desc")}<br/> {t("indexPage.desc2")}</p>
@@ -74,8 +86,7 @@ const IndexPage: CustomPage = () => {
           className="w-full sm:rounded-lg"
         />
 
-<div className="background-container">
-    </div>
+
       </ContentLayout>
 
       <style jsx>{`
