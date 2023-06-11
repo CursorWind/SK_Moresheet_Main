@@ -4,7 +4,7 @@
 
 This repository is a made as the technology and development club website of suankularb wittayalai school. The website as of its current state, is undergoing development and marked by the author as incomplete. If you encounter any bugs, an issue thread in github is highly appreciated. The link will be released in a later date. If it is public, the link will be below
 ```
-https://suankularb-technology-development-8adl.vercel.app/en-US
+https://suankularb-technology-development.vercel.app/en-US
 ```
 
 ## Commands
