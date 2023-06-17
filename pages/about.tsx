@@ -10,6 +10,8 @@ import {
   ContentLayout,
   Header,
   Section,
+  Button,
+  MaterialIcon
 } from "@suankularb-components/react";
 
 import React from 'react';
@@ -37,7 +39,7 @@ const IndexPage: CustomPage = () => {
         <Section>
           <Header>{t("aboutPage.title")}</Header>
           <Tdline />
-          <p className="skc-body-medium">{t("unfinished.ctx")}</p>
+          <p className="skc-body-medium">{t("aboutPage.ctx1")}</p>
         </Section>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           {isMobile ? (
@@ -66,17 +68,36 @@ const IndexPage: CustomPage = () => {
 
           {isMobile ? (<center>
             <div style={{ flex: '0 0 90vw' }}>
-              <p className='skc-display-small'>Our Vision</p> 
-            <p>{t("unfinished.ctx")}</p>
+              <p className='skc-display-small'>{t("aboutPage.Head2")}</p> 
+            <p>{t("aboutPage.ctx2")}</p> <br/>
+            <div className="w-1/2 block">
+            <Button 
+  appearance="filled"
+  icon={<MaterialIcon icon="login" />}
+  tooltip="Join us or else"
+  href="/en-US/contacts"
+>
+  Join us
+</Button></div>
 </div> </center>
           ) : (
-            <div style={{ flex: '0 0 56vw' }}>
-              <p className='skc-display-small'>Our Vision</p> 
-            <p>{t("unfinished.ctx")}</p>
+            <div style={{ flex: '0 0 56vw'}} className="inline"> 
+              <p className='skc-display-small'>{t("aboutPage.Head2")}</p> 
+            <p>{t("aboutPage.ctx2")}</p>
+            <br/>
+            <div className="w-1/4 block">
+            <Button 
+  appearance="filled"
+  icon={<MaterialIcon icon="login" />}
+  tooltip="Join us or else"
+  href="/en-US/contacts"
+>
+  Join us
+</Button></div>
             </div>
           )}
 
-          
+
           
         </div>
 

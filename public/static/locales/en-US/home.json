@@ -7,9 +7,12 @@
     "desc2": "meets entertainment."
   },
   "aboutPage": {
-    "title": "About",
-    "ctx1": "Technology meets entertainment."
-  },
+"title": "About",
+"ctx1": "Suankularb Technology and Development Club (SKTD) is an inspiring environment for developers and technology enthusiasts. Our club is dedicated to achieving utmost productivity by harnessing the power of AI and other cutting-edge technologies.",
+"Head2": "Our Vision",
+"ctx2": "At Suankularb Technology and Development Club, our vision is to create a significant impact on our school using technology. We strive to improve productivity and simplicity in our environment by leveraging code and utilizing existing APIs. By doing so, we aim to empower our members and enhance their skills in the world of technology.",
+"Head3": "Meet the Committee"
+},
   "contactsPage":{
     "title": "Contacts",
     "Head1": "Register",
