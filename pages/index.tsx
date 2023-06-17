@@ -74,6 +74,19 @@ const IndexPage: CustomPage = () => {
   href="/en-US/about"
 >
   Learn more
+</Button>
+<span className="w-3">
+
+</span>
+<Button className="w-5/12"
+  appearance="filled"
+  icon={<MaterialIcon icon="browse_activity" />}
+  tooltip="Video"
+  href="/en-US/about"
+  dangerous={true}
+>
+  TechDev Intro
+  
 </Button> </div>
   
   </Section>

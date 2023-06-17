@@ -145,13 +145,13 @@ const IndexPage: NextPage = () => {
             <p >{t("contactsPage.ctx2")}</p>
 
           {isMobile ? (
-              <div className="block w-full">
+              <div className="block">
               <a href="https://www.instagram.com/sktechdev/" target="_blank"  className="grid rounded-l-lg w-2/4 border-2 h-16 border-neutral-500 p-3 border-r-0"> <p> @SKTechDev </p> <p className="text-gray-400 text-sm"> Instagram </p> </a>
-              <img src="/images/home/media.png" className="rounded-r-lg h-16 border-neutral-500 relative border-2 cursor-pointer left-2/4 bottom-16"/>
+              <img src="/images/home/media.png" className="rounded-r-lg h-16 border-neutral-500 relative border-2 cursor-pointer left-2/4 bottom-16 w-16"/>
               <a href="https://discord.gg/3tS5VNW" target="_blank"  className="grid rounded-l-lg w-2/4 border-2 h-16 border-neutral-500 p-3 border-r-0">@SK TechDev <p className="text-gray-400 text-sm"> Discord </p> </a>
-              <img src="/images/home/media3.png" className="rounded-r-lg h-16 border-neutral-500 relative border-2 cursor-pointer left-2/4 bottom-16"/>
+              <img src="/images/home/media3.png" className="rounded-r-lg h-16 border-neutral-500 relative border-2 cursor-pointer left-2/4 bottom-16 w-16"/>
               <a href="https://www.youtube.com/@sktechdev" target="_blank" className="grid rounded-l-lg w-2/4 border-2 h-16 border-neutral-500 p-3 border-r-0">SKTechDev Club <p className="text-gray-400 text-sm"> Youtube </p> </a>
-              <img src="/images/home/media2.png" className="rounded-r-lg h-16 border-neutral-500 relative border-2 cursor-pointer left-2/4 bottom-16" />
+              <img src="/images/home/media2.png" className="rounded-r-lg h-16 border-neutral-500 relative border-2 cursor-pointer left-2/4 bottom-16 w-16" />
 
             </div>
             ):(
