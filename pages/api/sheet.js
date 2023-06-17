@@ -17,7 +17,7 @@ export default function handler(req, res) {
 
             //CUSTOMIZATION FROM HERE 
             const opt = {
-                spreadsheetId: '1cq2Xy_McXji3leDCRRHy7paVyckxpiHqq4Bat_Kw1tY',
+                spreadsheetId: process.env.GOOGLE_SHEET_ID,
                 range: 'Nextjs!A3:A'
             };
 

@@ -37,9 +37,9 @@ const IndexPage: CustomPage = () => {
       </Head>
       <ContentLayout>
         <Section>
-          <Header>{t("404.title")}</Header>
+          <Header>{t("404")}</Header>
           <Tdline />
-          <p className="skc-body-medium">{t("404.ctx")}</p>
+          <p className="skc-body-medium">{t("Page not found, this is not the page you are looking for ;-;")}</p>
         </Section>
         
         
