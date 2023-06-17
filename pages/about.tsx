@@ -113,8 +113,8 @@ const IndexPage: CustomPage = () => {
                 className="w-full sm:rounded-lg"
               /><br/>
             <div style={{ flex: '0 0 90vw' }}>
-              <p className='skc-display-small'>Meet the Committee</p> 
-            <p>{t("unfinished.ctx")}</p>
+              <p className='skc-display-small'>{t("aboutPage.Head2")}</p> 
+            <p>{t("aboutPage.ctx2")}</p>
 </div> 
 
 
