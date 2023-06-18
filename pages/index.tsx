@@ -82,7 +82,7 @@ const IndexPage: CustomPage = () => {
   appearance="filled"
   icon={<MaterialIcon icon="browse_activity" />}
   tooltip="Video"
-  href="/en-US/about"
+  href="https://www.youtube.com/watch?v=yCpYeazvBTw"
   dangerous={true}
 >
   TechDev Intro
