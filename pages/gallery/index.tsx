@@ -41,7 +41,46 @@ const IndexPage: CustomPage = () => {
           <Tdline />
           <p className="skc-title-large">{t("gallery.ctx1")}</p>
         </Section>
-<Section className="flex flex-col items-start gap-12 self-stretch w-full h-96"> 
+        
+
+
+        
+  {isMobile ? (<center>
+    <div className="grid skc-title-large">
+<p className="inline"> June 19th <p className="inline skc-title-medium text-gray-400"> Activity day</p></p>
+</div>
+  <Image
+                src="/images/home/activityDay/colVertical.jpg"
+                alt=""
+                width={200}
+                height={240}
+                className="w-5/6 sm:rounded-lg border"
+              />
+
+    <div className="flex w-full p-4">
+  <Button className="w-1/2 inline-block"
+  appearance="filled"
+  icon={<MaterialIcon icon="photo_library" />}
+  tooltip="Your generated images"
+  href="/en-US/gallery/ActivityDay"
+>
+  Community images
+  
+</Button> <span className="w-3"></span>
+  <Button className="w-1/2 inline-block"
+  appearance="outlined"
+  icon={<MaterialIcon icon="groups" />}
+  tooltip="Video"
+  href="/en-US/gallery/ActivityDayStaff"
+>
+  Staff images
+  
+</Button>
+
+</div>
+            </center>
+          ) : (
+            <Section className="flex flex-col items-start gap-12 self-stretch w-full h-96"> 
 <div className="flex w-full">
   <div className="w-5/12 p-3">
     <div className="grid skc-title-large">
@@ -114,9 +153,8 @@ const IndexPage: CustomPage = () => {
 
   
   </Section>
+          )}
 
-
-        
 
       </ContentLayout>
     </>
