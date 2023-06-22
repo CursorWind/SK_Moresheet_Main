@@ -146,6 +146,8 @@ const Layout: FC<
         href="/gallery"
         element={Link}
         />
+
+        
       </NavBar>
 
       {/* Page Header */}

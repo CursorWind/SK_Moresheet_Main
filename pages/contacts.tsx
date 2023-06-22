@@ -126,18 +126,10 @@ const IndexPage: NextPage = () => {
  
 
 
-        <div className="w-80 left-3" style={{zIndex:20}}>
-          <button className='w-80'
+        <div className="w-20 left-3" style={{zIndex:20}}>
+          <button className='w-20 h-10 rounded-full bg-sky-300 text-black'
     type='submit'
-  ><Button
-
-    appearance="filled"
-    icon={<MaterialIcon icon="login" />}
-    tooltip="Join us or else"
-
-    >
-    Join us
-  </Button>
+  > <p className="inline-block align-top"><MaterialIcon icon="login"/></p>
   </button>
        </div>  </form> <br/>
 

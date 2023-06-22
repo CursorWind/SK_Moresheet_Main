@@ -32,3 +32,4 @@ The site should start on your localhost
 | `1.0.5`          | Hackathon signup page and Suankast signup page                                                       |
 
 This readme file will be completed in a later date. For now, you can access the website by cloning this repo, then cd the directory, type npm i, and then npm run dev. Dont forget that you will not be able to register for sk techdev if you are running this locally.
+

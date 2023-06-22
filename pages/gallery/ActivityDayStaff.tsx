@@ -30,13 +30,6 @@ const IndexPage: CustomPage = () => {
   const { t } = useTranslation(["home", "common"]);
   const isMobile = isMobileDevice();
 
-  const strings = [];
-
-  // Populate the array with 50 strings
-  for (let i = 1; i <= 50; i++) {
-    strings.push(`/images/home/activityDay/GeneratedPictures/r (${i}).jfif`);
-  }
-
   return (
     <>
       <Head>
@@ -44,24 +37,11 @@ const IndexPage: CustomPage = () => {
       </Head>
       <ContentLayout>
         <Section>
-          <Header>วันแนะนำกิจกรรม 2023</Header>
+          <Header>Gallery</Header>
           <Tdline />
-          <p className="skc-body-medium">ภาพของน้องๆที่ Ai วาด</p>
-
-          <div>
-      {strings.map((string, index) => (
-        <Image
-        key={index}
-        src={string}
-        alt=""
-        width={400}
-        height={400}
-        className="w-48 sm:rounded-lg inline-flex p-1"
-      />
-        
-      ))}
-    </div>
+          <p className="skc-body-medium">{t("gallery.ctx1")}</p>
         </Section>
+
       </ContentLayout>
     </>
   );
