@@ -91,6 +91,13 @@ const Layout: FC<
             href="/contacts"
             element={Link}
           />
+          <NavDrawerItem
+            icon={<MaterialIcon icon="image" />}
+            label='gallery'
+            selected={router.pathname === "/gallery"}
+            href="/gallery"
+            element={Link}
+          />
         </NavDrawerSection>
         
 
@@ -132,6 +139,15 @@ const Layout: FC<
           href="/contacts"
           element={Link}
         />
+        <NavBarItem
+        icon={<MaterialIcon icon="image" />}
+        label='gallery'
+        selected={router.pathname === "/gallery"}
+        href="/gallery"
+        element={Link}
+        />
+
+        
       </NavBar>
 
       {/* Page Header */}
