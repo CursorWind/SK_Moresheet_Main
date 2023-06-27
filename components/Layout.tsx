@@ -87,8 +87,8 @@ const Layout: FC<
           <NavDrawerItem
             icon={<MaterialIcon icon="login" />}
             label='EuTH SignUp'
-            selected={router.pathname === "/contacts"}
-            href="/contacts"
+            selected={router.pathname === "/EuTH"}
+            href="/EuTH"
             element={Link}
           />
           <NavDrawerItem
@@ -135,8 +135,8 @@ const Layout: FC<
         <NavBarItem
           icon={<MaterialIcon icon="login" />}
           label='EuTH'
-          selected={getIsSelected(/^\/contacts/)}
-          href="/contacts"
+          selected={getIsSelected(/^\/EuTH/)}
+          href="/EuTH"
           element={Link}
         />
         <NavBarItem
