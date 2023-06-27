@@ -47,7 +47,6 @@ const IndexPage: CustomPage = () => {
               <Image
                 src="/images/home/Frame 43.png"
                 alt=""
-                layout="responsive"
                 width={400}
                 height={500}
                 className="w-full sm:rounded-lg"
@@ -58,7 +57,6 @@ const IndexPage: CustomPage = () => {
               <Image
                 src="/images/home/Frame 43.png"
                 alt=""
-                layout="responsive"
                 width={400}
                 height={500}
                 className="w-full sm:rounded-lg"

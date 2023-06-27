@@ -85,17 +85,17 @@ const Layout: FC<
             element={Link}
           />
           <NavDrawerItem
-            icon={<MaterialIcon icon="contacts" />}
-            label='contact'
+            icon={<MaterialIcon icon="login" />}
+            label='EuTH SignUp'
             selected={router.pathname === "/contacts"}
             href="/contacts"
             element={Link}
           />
           <NavDrawerItem
-            icon={<MaterialIcon icon="image" />}
-            label='gallery'
-            selected={router.pathname === "/gallery"}
-            href="/gallery"
+            icon={<MaterialIcon icon="local_fire_department" />}
+            label='Upcoming'
+            selected={router.pathname === "/soontm"}
+            href="/soontm"
             element={Link}
           />
         </NavDrawerSection>
@@ -108,7 +108,7 @@ const Layout: FC<
       <NavBar
         brand={
           <Image
-            src="/images/home/svgtdlogo.svg"
+            src="/images/logo.svg"
             priority
             width={56}
             height={56}
@@ -133,18 +133,19 @@ const Layout: FC<
           element={Link}
         />
         <NavBarItem
-          icon={<MaterialIcon icon="contacts" />}
-          label='contact'
+          icon={<MaterialIcon icon="login" />}
+          label='EuTH'
           selected={getIsSelected(/^\/contacts/)}
           href="/contacts"
           element={Link}
         />
         <NavBarItem
-        icon={<MaterialIcon icon="image" />}
-        label='gallery'
+        icon={<MaterialIcon icon="local_fire_department" />}
+        label='Upcoming'
         selected={router.pathname === "/gallery"}
         href="/gallery"
         element={Link}
+        className="FireTopic"
         />
 
         

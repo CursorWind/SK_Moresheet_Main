@@ -35,14 +35,16 @@ const IndexPage: NextPage = () => {
 }
   const isMobile = isMobileDevice();
 
-  const [email,setEmail] = useState('')
-  const [fullName,setFullName] = useState('')
-  const [nick,setnick] = useState('')
+  const [TeamName,setTN] = useState('')
+  const [Password,setPW] = useState('')
+  const [School,updateSCH] = useState('')
   const [classN,setclassN] = useState('')
+  
+  
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        const form = {email,fullName,nick,classN}
+        const form = {TeamName,Password,School,classN}
         
         const response = fetch('/api/setAdder',{
           method: 'POST',
@@ -73,43 +75,43 @@ const IndexPage: NextPage = () => {
 
             <form onSubmit={handleSubmit} className="inline"><div className="top-0 w-96 inline-grid">
               <label className="text-gray-400">
-                Email
+                TeamName
               </label>
           <input
           type='text'
             className='w-80 h-12 pl-4'
             style={{zIndex:20}}
-            value={email}
+            value={TeamName}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              setEmail(event.target.value as string)
+              setTN(event.target.value as string)
             }
         /> 
 <br/>
 <label className="text-gray-400">
-                NickName
+                School
               </label>
           <input
           type='text'
             className='w-80 h-12 pl-4'
             style={{zIndex:20}}
-            value={nick}
+            value={School}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              setnick(event.target.value as string)
+              updateSCH(event.target.value as string)
             }
         /> <br/>
         </div>
         
         
         <div className="w-96 inline-grid top-0"> <label className="text-gray-400">
-        Name
+        Team Account Password
       </label>
   <input
   type='text'
     className='w-80 h-12 pl-4'
     style={{zIndex:20}}
-    value={fullName}
+    value={Password}
     onChange={(event: ChangeEvent<HTMLInputElement>) =>
-      setFullName(event.target.value as string)
+      setPW(event.target.value as string)
     }
 /> <br/> <label className="text-gray-400">
         Discord (optional)

@@ -38,20 +38,8 @@ const IndexPage: CustomPage = () => {
       <ContentLayout>
         
         <Section>
-    <b><h1 className="skc-display-large display-large">SK 
+    <b><h1 className="skc-display-large display-large">SK English Club
     
-    {isMobile ? (
-      <p className="gradient-text"> <br/>  <br/> Tech <br/>  <br/> Dev <img
-      src="/images/Futuristic Backdrop Mobile.png"
-      className="w-full absolute p-0 m-0 left-0 top-0"
-      /> </p>
-    ) : (
-      <p className="gradient-text"> TechDev <img
-      src="/images/Futuristic Backdrop.png"
-      className="w-full absolute p-0 m-0 left-0 top-0"
-      /> </p>
-    )}
-
     </h1></b>
     <p className="skc-display-medium">{t("indexPage.desc")}<br/> {t("indexPage.desc2")}</p>
   
@@ -102,38 +90,6 @@ const IndexPage: CustomPage = () => {
 
       </ContentLayout>
 
-      <style jsx>{`
-
-.gradient-text {
-  display: inline;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: radial-gradient(circle, #EB695A, #E98462, #6370B9, #A16499);
-
-}
-
-      .display-large{
-        font-size: 160px;
-        margin-top: 60px;
-        margin-bottom: 30px;
-      }
-  .background-container {
-    width: 100vw;
-    height: 75vw;
-    position: absolute;
-    left: 0px; top: -20px;
-    background-image: url("/images/Futuristic Backdrop.png");
-    background-repeat: no-repeat;
-    opacity: 0.6;
-    z-index:-21;
-    background-size: cover;
-  }
-  body{
-    overflow:hidden;
-  }
-`}</style>
-
     </>
   );
 };
@@ -145,4 +101,3 @@ export const getStaticProps = async ({ locale }: { locale: LangCode }) => ({
 });
 
 export default IndexPage;
-

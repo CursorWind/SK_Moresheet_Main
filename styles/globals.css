@@ -26,3 +26,20 @@
     }
   }
 }
+    @keyframes vibrate {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-2px) rotate(-1deg); }
+      40% { transform: translateX(2px) rotate(1deg); }
+      60% { transform: translateX(-2px) rotate(-1deg); }
+      80% { transform: translateX(2px) rotate(1deg); }
+      100% { transform: translateX(0); }
+    }
+
+    .FireTopic{
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .FireTopic:hover {
+      animation: vibrate 0.2s infinite;
+    }
