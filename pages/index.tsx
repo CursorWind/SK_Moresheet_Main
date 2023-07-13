@@ -35,61 +35,87 @@ const IndexPage: CustomPage = () => {
         <title>{t("brand.name", { ns: "common" })}</title>
       </Head>
       
-      <ContentLayout>
+      <ContentLayout className="ready">
         
         <Section>
-    <b><h1 className="skc-display-large display-large">SK English Club
+       <h1 className="skc-display-largest"> {t("indexPage.title")} 
     
-    </h1></b>
-    <p className="skc-display-medium">{t("indexPage.desc")}<br/> {t("indexPage.desc2")}</p>
+    <p className="gradient-text">
+      {t("indexPage.gradiented")}
+      
+    </p>
+<p className="skc-display-medium m-0 ">{t("indexPage.desc")} <br/> {t("indexPage.desc2")}</p>
+    </h1>
+    
   
     <div style={{ display: 'flex'}}>
     <Button className="w-5/12"
   appearance="filled"
-  icon={<MaterialIcon icon="login" />}
-  tooltip="Join us or else"
-  href="/en-US/contacts"
+  icon={<MaterialIcon icon="dynamic_form" />}
+  tooltip="Go to sheets database page"
+  href="/en-US/sheets"
 >
-  Join us
-</Button>
-<span className="w-3">
-
-</span>
-<Button className="w-5/12"
-  appearance="outlined"
-  icon={<MaterialIcon icon="info" />}
-  tooltip="Just join us already"
-  href="/en-US/about"
->
-  Learn more
+  Full Database
 </Button>
 <span className="w-3">
 
 </span>
 <Button className="w-5/12"
   appearance="filled"
-  icon={<MaterialIcon icon="browse_activity" />}
+  icon={<MaterialIcon icon="info" />}
+  tooltip="Just join us already"
+  href="/en-US/about"
+>
+  Share Your Notes
+</Button>
+<span className="w-3">
+
+</span>
+<Button className="w-5/12"
+  appearance="filled"
+  icon={<MaterialIcon icon="policy" />}
   tooltip="Video"
   href="https://www.youtube.com/watch?v=yCpYeazvBTw"
   dangerous={true}
 >
-  TechDev Intro
+  Legal
   
 </Button> </div>
   
   </Section>
-  <Image
-          src="/images/home/Frame 8.png"
-          width={1000}
-          height={230}
-          priority
-          alt=""
-          className="w-full sm:rounded-lg"
-        />
 
 
       </ContentLayout>
+      <div className="background-container">
+    </div>
+      <style jsx>
+        {`
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;750&display=swap');
 
+        .gradient-text {
+          display: inline;
+          font-weight: 600;
+          
+          letter-spacing: -6.25px;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-image: linear-gradient(115deg, rgba(255,255,255,1) 0%, rgba(158,255,255,1) 25%, rgba(99,112,185,1) 60%, rgba(161,100,153,1) 100%);
+          padding:0px;
+        }
+
+        .background-container {
+          opacity: 0.75;
+    width: 100vw;
+    height: 75vw;
+    position: absolute;
+    left: 0px; top: -50px;
+    background-image: url("/images/MoreSheetBg.png");
+    background-repeat: no-repeat;
+    z-index:-21;
+    background-size: cover;
+  }`}
+      </style>
     </>
   );
 };

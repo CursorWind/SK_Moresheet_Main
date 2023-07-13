@@ -117,19 +117,20 @@ const Layout: FC<
         }
         fab={fab}
         onNavToggle={() => setNavOpen(true)}
+        className="opacity-80"
       >
         <NavBarItem
-          icon={<MaterialIcon icon="home" />}
+          icon={<MaterialIcon icon="meeting_room" />}
           label='home'
           selected={getIsSelected(/^\/$/)}
           href="/"
           element={Link}
         />
         <NavBarItem
-          icon={<MaterialIcon icon="info" />}
-          label='about'
-          selected={getIsSelected(/^\/about/)}
-          href="/about"
+          icon={<MaterialIcon icon="picture_as_pdf" />}
+          label='Sheets'
+          selected={getIsSelected(/^\/sheets/)}
+          href="/sheets"
           element={Link}
         />
         <NavBarItem
