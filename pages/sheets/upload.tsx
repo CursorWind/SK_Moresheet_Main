@@ -42,12 +42,13 @@ const IndexPage: CustomPage = () => {
 
   const [Attributes,setAT] = useState('')
   const [Subject,cS] = useState('')
-  const [SearchQuery,SearchQueryUpdate] = useState('')
+  const [Name,NameCX] = useState('')
 
   const handleSubmit = async () => {
-    //
+   //
     
 }
+
   return (
     <>
       <Head>
@@ -55,56 +56,50 @@ const IndexPage: CustomPage = () => {
       </Head>
       <ContentLayout>
         <Section>
-          <Header>SK MoreSheet | Search Page</Header>
+          <Header>SK MoreSheet | Upload page</Header>
           <HeaderLine/>
           <p className="skc-body-medium">This text you are seeing here indicates either 1 - @squarecube is lazy af please go wake him 2 - This webpage is forgotten pls contact tonmai lmao. Currently, i am a placeholder and not functional. if you think this is a mistake, contact discord SquareCube or IG Cursorwind. Thanks. For now, enjoy reading whatever this leads you. glhf with life. </p>
         </Section>
         <Section>
 
         <Columns columns={3} className="my-3 !gap-y-12"> 
-        <TextField<string>
+        <div>
+         <TextField<string>
         appearance="outlined"
-        label='Attributes'
-        align="left"
-        value="   "
-        
-        
-      />
-      <Select
-  appearance="outlined"
-  label={t("Searching.form.Subject")}
-  helperMsg="Specify your subject"
-  value={Subject}
-  onChange={cS}
->
-<MenuItem value="">Unselected</MenuItem> 
-<MenuItem value="Biology">Biology</MenuItem>
-  <MenuItem value="Chemistry">Chemistry</MenuItem>
-  <MenuItem value="Physics">Physics</MenuItem>
-  <MenuItem value="Math/Computer">Math/Computing</MenuItem>
-  <MenuItem value="Eng">English</MenuItem>
-  <MenuItem value="Thai">Thai</MenuItem>
-  <MenuItem value="Social">Social/Geography/Culture</MenuItem>
-  <MenuItem value="Others">Other</MenuItem>
-</Select>
-      <TextField<string>
-        appearance="outlined"
-        label={t("Searching.form.Query")}
+        label={t("Uploading.Name")}
         align="left"
 
-        value={SearchQuery}
-        onChange={(value) => SearchQueryUpdate(value)}
+        value={Name}
+        onChange={(value) => NameCX(value)}
         inputAttr={{
-          autoCapitalize: "off",
+          autoCapitalize: "on",
           spellCheck: false,
           onKeyUp: (event) => event.key === "Enter" && handleSubmit(),
-        }}
-      />
+        }}  /> 
+        <br/>
+        <TextField<string>
+        appearance="outlined"
+        label={t("Uploading.Subject")}
+        align="left"
 
-      
-      </Columns>
+        value={Subject}
+        onChange={(value) => cS(value)}
+        inputAttr={{
+          autoCapitalize: "on",
+          spellCheck: false,
+          onKeyUp: (event) => event.key === "Enter" && handleSubmit(),
+        }}  /> 
+        </div>
+
+        <div>
+         
+        </div>
+        </Columns>
         </Section>
         
+        
+      
+
       </ContentLayout>
     </>
   );

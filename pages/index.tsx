@@ -16,7 +16,7 @@ import {
 } from "@suankularb-components/react";
 
 
-
+import React from "react";
 
 // Types
 import { CustomPage, LangCode } from "@/utils/types";

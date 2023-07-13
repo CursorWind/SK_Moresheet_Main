@@ -2,6 +2,14 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "eqeqeq": "warn",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": [
+          "jsx", "global"
+        ]
+      }
+    ]
   }
 }

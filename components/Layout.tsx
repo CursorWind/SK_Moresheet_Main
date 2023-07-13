@@ -134,10 +134,10 @@ const Layout: FC<
           element={Link}
         />
         <NavBarItem
-          icon={<MaterialIcon icon="login" />}
-          label='EuTH'
-          selected={getIsSelected(/^\/EuTH/)}
-          href="/EuTH"
+          icon={<MaterialIcon icon="post_add" />}
+          label='Share'
+          selected={getIsSelected(/^\/upload/)}
+          href="/sheets/upload"
           element={Link}
         />
         <NavBarItem
